@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7cb95d4d-b7a2-4be7-b765-2ef24a54da02" name="194.87.95.100">
+        <fileTransfer rootFolder="/root/techno_school_pages" accessType="SFTP" host="194.87.95.100" port="22" sshConfigId="cd5b2377-955a-4494-ad47-91b35941f9f0" sshConfig="root@194.87.95.100:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" isUseRsync="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
