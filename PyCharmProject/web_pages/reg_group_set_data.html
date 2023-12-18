@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Title</title>
+</head>
+<style>
+    /*Обнуление*/
+    * {
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+
+    *, *:before, *:after {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    :focus, :active {
+        outline: none;
+    }
+
+    a:focus, a:active {
+        outline: none;
+    }
+
+    nav, footer, header, aside {
+        display: block;
+    }
+
+    html, body {
+        height: 100%;
+        width: 100%;
+        font-size: 100%;
+        line-height: 1;
+        font-size: 14px;
+        -ms-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    input, button, textarea {
+        font-family: inherit;
+    }
+
+    input::-ms-clear {
+        display: none;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    button::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+
+    a, a:visited {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    ul li {
+        list-style: none;
+    }
+
+    img {
+        vertical-align: top;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-size: inherit;
+        font-weight: 400;
+    }
+
+    /*--------------------*/
+
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+    body {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 200;
+        color: var(--tg-theme-text-color);
+        background: var(--tg-theme-bg-color);
+    }
+
+    .main {
+        text-align: center;
+    }
+
+    .text {
+        width: 100%;
+        margin-top: 5%;
+        display: inline-block;
+
+    }
+
+    .input_date {
+        border: solid;
+        display: inline-block;
+        margin-top: 10%;
+        border-radius: 20px;
+        padding: 10px;
+        font-size: 14px;
+        background-color: var(--tg-theme-text-color);
+        width: 70%;
+        height: 100px;
+        transition: all 800ms ease;
+    }
+
+    .input_date:hover {
+        box-shadow: 0 0 25px #CF821E; /*#c8c6c7*/
+        border-color: #CF821E;
+        background-color: rgba(180, 90, 28, 0.43);
+        color: #FFEAD7;
+        transition: all 800ms ease;
+    }
+
+    .input_date:focus {
+        box-shadow: 0 0 25px #CF821E; /*#c8c6c7*/
+        border-color: #CF821E;
+        background-color: rgba(180, 90, 28, 0.43);
+        color: #FFEAD7;
+        transition: all 800ms ease;
+    }
+
+    .input_date::-webkit-calendar-picker-indicator{
+        padding: 5%;
+        font-size: 30px;
+        transition: all 800ms ease;
+    }
+    .input_date::-webkit-calendar-picker-indicator:hover {
+        padding: 5%;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: #D7E7FF;
+        box-shadow: 0 0 25px white; /*#c8c6c7*/
+    }
+    .upload_button{
+        margin-top: 10%;
+        border: solid 2px;
+        width: 60%;
+        padding: 6%;
+        font-size: 16px;
+        border-radius: 20px;
+        text-align: center;
+        color: #939393;
+        background: #313131;
+        transition: all 800ms ease;
+    }
+
+    .upload_button:hover {
+        color: black;
+        border: solid 2px rgba(207, 130, 30, 0.77);
+        background: #a7a6a6;
+        transition: all 800ms ease;
+        box-shadow: 0 0 25px rgba(207, 130, 30, 0.77);
+    }
+</style>
+
+<body>
+<div class="main">
+    <h1 class="text">Введите дату старта занятий группы </h1>
+    <input class="input_date"
+           type="datetime-local"
+           id="meeting-time"
+           name="meeting-time"
+           value="2018-06-12T19:30"
+           min="2018-06-07T00:00"
+           max="2018-06-14T00:00"/>
+    <button class = "upload_button">Установить время</button>
+</div>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+    let dateInput = document.querySelector('input[type="datetime-local"]');
+    dateInput.value = new Date();
+    let minDate = new Date();
+    minDate.setDate(minDate.getDate() - 2);
+    dateInput.min = minDate;
+    let maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 365);
+    dateInput.max = maxDate;
+</script>
+</body>
+</html>

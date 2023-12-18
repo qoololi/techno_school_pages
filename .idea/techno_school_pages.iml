@@ -8,6 +8,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Remote Python 3.8.10 (sftp://root@194.87.95.100:22/root/.virtualenvs/PyCharmProject/bin/python)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jquery-3.6.3" level="application" />
     <orderEntry type="library" name="telegram-web-app" level="application" />
   </component>
 </module>

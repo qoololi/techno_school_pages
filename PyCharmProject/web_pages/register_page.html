@@ -262,46 +262,46 @@
             document.getElementById("error").innerText = error;
         }
         set_error('');
-        if(last_name.length === 0){
-            set_error("Введите вашу фамилию.");
-            return;
-        }
-        if(first_name.length === 0){
-            set_error("Введите ваше имя.");
-            return;
-        }
-        if(second_name.length === 0){
-            set_error("Введите ваше отчество.");
-            return;
-        }
-        if(email.length === 0){
-            set_error("Введите ваш номер телефона.");
-            return;
-        }
-        if(!regexpEmail.test(email)){
-            set_error("Неверно введена почта");
-            return;
-        }
-        if(phone.length === 0){
-            set_error("Введите ваш номер телефона.");
-            return;
-        }
-        if(!regexpName.test(last_name)){
-            set_error("Неверно введена фамилия");
-            return;
-        }
-        if(!regexpName.test(first_name)){
-            set_error("Неверно введено имя");
-            return;
-        }
-        if(!regexpName.test(second_name)){
-            set_error("Неверно введено отчество");
-            return;
-        }
-        if(!regexpPhoneNumber.test(phone)){
-            set_error("Неверно введен номер телефона");
-            return;
-        }
+        // if(last_name.length === 0){
+        //     set_error("Введите вашу фамилию.");
+        //     return;
+        // }
+        // if(first_name.length === 0){
+        //     set_error("Введите ваше имя.");
+        //     return;
+        // }
+        // if(second_name.length === 0){
+        //     set_error("Введите ваше отчество.");
+        //     return;
+        // }
+        // if(email.length === 0){
+        //     set_error("Введите ваш номер телефона.");
+        //     return;
+        // }
+        // if(!regexpEmail.test(email)){
+        //     set_error("Неверно введена почта");
+        //     return;
+        // }
+        // if(phone.length === 0){
+        //     set_error("Введите ваш номер телефона.");
+        //     return;
+        // }
+        // if(!regexpName.test(last_name)){
+        //     set_error("Неверно введена фамилия");
+        //     return;
+        // }
+        // if(!regexpName.test(first_name)){
+        //     set_error("Неверно введено имя");
+        //     return;
+        // }
+        // if(!regexpName.test(second_name)){
+        //     set_error("Неверно введено отчество");
+        //     return;
+        // }
+        // if(!regexpPhoneNumber.test(phone)){
+        //     set_error("Неверно введен номер телефона");
+        //     return;
+        // }
 
         let callbackData={
             last_name:last_name,

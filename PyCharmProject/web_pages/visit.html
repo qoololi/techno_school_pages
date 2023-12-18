@@ -1,0 +1,346 @@
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Title</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap'); /*Обнуление*/
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        *, *:before, *:after {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        :focus, :active {
+            outline: none;
+        }
+
+        a:focus, a:active {
+            outline: none;
+        }
+
+        nav, footer, header, aside {
+            display: block;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            font-size: 100%;
+            line-height: 1;
+            font-size: 14px;
+            -ms-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        input, button, textarea {
+            font-family: inherit;
+        }
+
+        input::-ms-clear {
+            display: none;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        button::-moz-focus-inner {
+            padding: 0;
+            border: 0;
+        }
+
+        a, a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-size: inherit;
+            font-weight: 400;
+        }
+
+        /*--------------------*/
+        body {
+            background-color: #FFFCF3;
+            text-align: center;
+            overflow-x: clip;
+            width: 100%;
+            font-family: 'Comfortaa';
+        }
+
+        header {
+            display: inline-block;
+            max-width: 1200px;
+        }
+
+        .logo {
+            display: inline-block;
+            width: 40%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+        }
+
+        .main {
+            display: inline-block;
+            max-width: 1200px;
+            width: 100%;
+            /* Стили для основного блока */
+            text-align: center;
+        }
+
+
+        .first_picture {
+            display: inline-block;
+            border-radius: 15px;
+            padding-left: 7.5%;
+            padding-right: 7.5%;
+            width: 60%;
+            background-color: #FFEAD7;
+            transition: all 800ms ease;
+        }
+
+        .first_picture:hover {
+            /* Стили для блока с изображением */
+            width: 70%;
+        }
+
+        .section {
+            padding-top: 4%;
+            display: flex;
+            justify-content: center;
+
+            /*background-color: coral;*/
+            /*margin-top: 10px;*/
+
+            width: 100%;
+            height: 25%;
+            flex-wrap: wrap;
+            align-items: center;
+            transition: all 800ms ease;
+        }
+
+        .left_pict_wrapper, .right_pict_wrapper {
+            z-index: initial;
+
+            /*background-color: aqua;*/
+
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            width: 40%;
+            height: 90%;
+            /*background-color: coral;*/
+            transition: all 800ms ease;
+        }
+
+        .right_pict_wrapper:before {
+            z-index: -2;
+            content: "";
+            position: absolute;
+            height: 20%;
+            width: 28%;
+            margin-top: -2.2%;
+            background-color: #D7E7FF;
+            border-bottom-left-radius: 15px;
+            border-top-left-radius: 15px;
+            left: 72%;
+            transition: all 800ms ease;
+        }
+
+        .left_pict_wrapper:before {
+            z-index: -2;
+            content: "";
+            position: absolute;
+            height: 20%;
+            width: 55%;
+            margin-top: -2.2%;
+            background-color: #FFEAD7;
+            border-radius: 15px;
+            right: 57%;
+            transition: all 800ms ease;
+        }
+
+        .left_pict_wrapper:hover, .right_pict_wrapper:hover {
+            /* Стили для блока с изображением */
+            width: 50%;
+            height: 100%;
+        }
+
+        .left_column_border_move:before {
+            right: 80%;
+            height: 30%;
+        }
+
+        .left_column_border_return:before {
+            right: 57%;
+            height: 20%;
+        }
+
+        .right_column_border_move:before {
+            left: 85%;
+            width: 15%;
+            height: 30%;
+        }
+
+        .right_column_border_return:before {
+            left: 72%;
+            width: 28%;
+            height: 20%;
+        }
+
+
+        .section_picture {
+            /* Стили для блока с изображением */
+            object-fit: contain;
+            height: 100%;
+            /*background-color: #D7E7FF;*/
+            border-radius: 15px;
+            object-position: 50% 50%;
+            max-width: 500px;
+            /*background-color: coral;*/
+            min-width: 100px;
+            transition: all 800ms ease;
+            /*background-color: aqua;*/
+        }
+
+        .section_picture:hover {
+            height: 100%;
+            width: 100%;
+        }
+
+
+
+        .section_text {
+            /*background-color: bisque;*/
+            width: 50%;
+            display: inline-block;
+            /*background-color: coral;*/
+            padding-left: 2%;
+        }
+
+        .section_text_header {
+            /* Стили для заголовка h1 в блоке с текстом */
+            font-size: 16px;
+        }
+
+        .section_text_text {
+            padding-top: 10px;
+            /* Стили для абзаца в блоке с текстом */
+            text-align: left;
+            font-size: 14px;
+        }
+        @media (max-width: 1024px) {
+            .section_text_text{
+                font-size: 12px;
+            }
+        }
+    </style>
+    <script
+            src="https://code.jquery.com/jquery-3.6.3.js"
+            integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+            crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).init(function () {
+                $(".left_pict_wrapper").on("mouseover", function () {
+                    $(this).parent().outerHeight('30%');
+                    $(this).removeClass("left_column_border_return");
+                    $(this).addClass("left_column_border_move");
+                    console.log($(this).parent());
+                });
+                $(".left_pict_wrapper").on("mouseout", function () {
+                    $(this).parent().innerHeight('25%');
+                    $(this).removeClass("left_column_border_move");
+                    $(this).addClass("left_column_border_return");
+                });
+                $(".right_pict_wrapper").on("mouseover", function () {
+                    $(this).parent().outerHeight('30%');
+                    $(this).removeClass("right_column_border_return");
+                    $(this).addClass("right_column_border_move");
+                    console.log($(this).parent());
+                });
+                $(".right_pict_wrapper").on("mouseout", function () {
+                    $(this).parent().innerHeight('25%');
+                    $(this).removeClass("right_column_border_move");
+                    $(this).addClass("right_column_border_return");
+                });
+            }
+        )
+    </script>
+</head>
+<body>
+<div class="main">
+    <img class="logo" src="source/imgs/lending_imgs/logo_t_sch.png" alt="">
+    <img class="first_picture" src="source/imgs/lending_imgs/1_pic.png" alt="">
+    <div class="section">
+        <div class="section_text">
+            <h1 class="section_text_header">Авторская методика.</h1>
+            <p class="section_text_text"> Интенсивная программа подготовки к ЕГЭ по физике,
+                информатике и математике с уникальной методикой, охватывающей теорию и практику.</p>
+        </div>
+        <div class="right_pict_wrapper">
+            <img class="section_picture" src="source/imgs/lending_imgs/girl_pic.png" alt="">
+        </div>
+    </div>
+    <div class="section">
+        <div class="left_pict_wrapper">
+            <img class="section_picture" src="source/imgs/lending_imgs/online_lessons.png" alt="">
+        </div>
+        <div class="section_text">
+            <h1 class="section_text_header">Онлайн-уроки.</h1>
+            <p class="section_text_text">Онлайн-уроки с записями 24/7, таймкодами и возможностью интерактивного общения.</p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section_text">
+            <h1 class="section_text_header">Материалы курса.</h1>
+            <p class="section_text_text">Личный кабинет с материалами, включая теорию и вспомогательные файлы. </p>
+        </div>
+        <div class="right_pict_wrapper">
+            <img class="section_picture" src="source/imgs/lending_imgs/material_curses.png" alt="">
+        </div>
+    </div>
+    <div class="section">
+        <div class="left_pict_wrapper">
+            <img class="section_picture" src="source/imgs/lending_imgs/many_students.png" alt="">
+        </div>
+        <div class="section_text">
+            <h1 class="section_text_header">Домашние задания.</h1>
+            <p class="section_text_text">Домашние задания проверяют эксперты, с системой индивидуальных дедлайнов. </p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section_text">
+            <h1 class="section_text_header">Пробники ЕГЭ.</h1>
+            <p class="section_text_text">Регулярные пробные варианты ЕГЭ с разбором для глубокого понимания и лучшей подготовки.</p>
+        </div>
+        <div class="right_pict_wrapper">
+            <img class="section_picture" src="source/imgs/lending_imgs/probniki.png" alt="">
+        </div>
+    </div>
+</div>
+</body>
+</html>
