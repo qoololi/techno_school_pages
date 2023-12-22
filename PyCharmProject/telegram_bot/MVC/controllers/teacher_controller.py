@@ -23,9 +23,11 @@ class teacher_controller:
     def get_short_teachers_names_by_subject(subject_name: str):
         teachers = teacher_model.get_teachers_by_subject(subject_name=subject_name)
         names = []
+        teachers_id = {}
         for teacher in teachers:
-            names.append(f"teacher_id:{teacher[0]}\n{teacher[1]} {teacher[2][0]}.{teacher[3][0]}.")
-        return names
+            names.append(f"{teacher[1]} {teacher[2][0]}.{teacher[3][0]}.")
+            teachers_id[f"{teacher[1]} {teacher[2][0]}.{teacher[3][0]}."]=teacher[0]
+        return names, teachers_id
     # def update_teacher_info(self, tg_user_id: int, new_data: Dict[str, Any]) -> bool:
     #     succes_flag = teacher_model.update_teacher_info(tg_user_id, new_data)
     #

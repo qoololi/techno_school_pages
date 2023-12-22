@@ -14,8 +14,6 @@ def start_buttons(teacher_ui_flag: bool, admin_ui_flag: bool):
     if admin_ui_flag:
         markup.add(types.KeyboardButton(
             text=PyCharmProject.telegram_bot.texts.buttons_texts.reply_buttons_texts.choose_admin_ui))
-    markup.add(types.KeyboardButton(text="test", web_app=types.WebAppInfo(
-                                       url="https://technoschool-workspace.ru/reg_group_set_data.html")))
     markup.adjust(1)
     return markup.as_markup(resize_keyboard=True)
 

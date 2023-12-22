@@ -65,3 +65,17 @@ create table if not exists users_contacts
     email text,
     phone_number text
 );
+
+create table if not exists parents
+(
+    parent_id serial
+        primary key,
+    user_id integer
+);
+
+
+create table if not exists parents_children
+(
+    parent_id integer,
+    child_user_id integer
+);

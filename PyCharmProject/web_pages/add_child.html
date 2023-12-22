@@ -211,137 +211,6 @@
             color: rgba(255, 104, 104, 0.62);
         }
 
-        select{
-            margin-top: 5%;
-            height: 5%;
-            width: 50%;
-            padding-left: 10px;
-            display: inline-block;
-            transition: all 800ms ease;
-            border-radius: 15px;
-
-        }
-
-        .selector{
-            position: relative;
-        }
-
-        .button_wrapper{
-            position: relative;
-            width: 50%;
-            margin-left: 25%;
-            margin-top: 5%;
-            height: 8%;
-        }
-
-
-        .selector_dropdown_button{
-            text-align: left;
-            padding-left: 10px;
-            width: 100%;
-            height: 100%;
-            display: inline-block;
-            transition: all 800ms ease;
-            border: solid 3px #555c71;
-            border-radius: 15px;
-            color: var(--tg-theme-bg-color);
-            background: var(--tg-theme-text-color);
-        }
-        .selector_dropdown_button:hover{
-            box-shadow: 0 0 25px rgba(207, 130, 30, 0.77);
-            border-color: #CF821E;
-            color: var(--tg-theme-text-color);
-            background: var(--tg-theme-bg-color);
-        }
-        .selector_dropdown_button:hover::before,
-        .selector_dropdown_button:hover::after{
-            background-color: var(--tg-theme-text-color);
-        }
-
-        .selector_dropdown_button::before{
-            content: '';
-            position: absolute;
-            top:50%;
-            right: 16px;
-            width: 9px;
-            height: 1.8px;
-            rotate: 45grad;
-            background-color: var(--tg-theme-bg-color);
-            transition: all 800ms ease;
-        }
-        .selector_dropdown_button::after{
-            content: '';
-            position: absolute;
-            top:50%;
-            right: 10.5px;
-            width: 9px;
-            height: 1.8px;
-            rotate: -45grad;
-            background-color: var(--tg-theme-bg-color);
-            transition: all 800ms ease;
-
-        }
-
-        .selector_dropdown_button.active{
-            color: var(--tg-theme-text-color);
-            background: var(--tg-theme-bg-color);
-
-        }
-
-        .selector_dropdown_button.active::after,
-        .selector_dropdown_button.active::before{
-
-            background-color: var(--tg-theme-text-color);
-        }
-
-        .selector_dropdown_button.active::after{
-            rotate: 45grad;
-        }
-        .selector_dropdown_button.active::before{
-            rotate: -45grad;
-        }
-
-
-        .selector_dropdown_list{
-            display: none;
-        }
-        .student, .parent{
-            display: flex;
-            align-items: center;
-
-            text-align: left;
-            padding-left: 10px;
-            margin-top: 0.5%;
-
-
-            width: 100%;
-            height: 62.5%;
-            transition: all 800ms ease;
-            border: solid 2px #555c71;
-            border-radius: 10px;
-            color: var(--tg-theme-text-color);
-            background: var(--tg-theme-bg-color);
-            cursor: pointer;
-        }
-        .student{
-        }
-        .parent{
-        }
-        .student.active{
-            /*transform: translateY(110%);*/
-        }
-        .parent.active{
-            /*transform: translateY(220%);*/
-            /*bottom: -135%;*/
-        }
-        .student:hover,
-        .parent:hover{
-            box-shadow: 0 0 15px rgba(207, 130, 30, 0.77);
-            border-color: #CF821E;
-            color: var(--tg-theme-text-color);
-            background: var(--tg-theme-bg-color);
-        }
-
         @media (min-width: 520px) and (max-width: 1024px) {
             header {
                 font-size: 40px;
@@ -370,63 +239,15 @@
         <input id="last_name" type="text" placeholder="Фамилия">
         <input id="first_name" type="text" placeholder="Имя">
         <input id="second_name" type="text" placeholder="Отчество">
-        <input id="email" type="text" placeholder="Почта">
         <input id="phone" type="text" placeholder="Номер телефона (+79000000000)">
     </form>
-        <div class = "selector">
-            <div class = "button_wrapper">
-                <button type=button id = "selector_dropdown_button" class = "selector_dropdown_button">Ученик</button>
-                <div class = "selector_dropdown_list">
-                    <div class="student">Ученик</div>
-                    <div class="parent">Родитель</div>
-                </div>
-            </div>
-        </div>
 
-    <button id="reg">Зарегистрироваться</button>
+    <button id="reg">Отправить</button>
 </div>
 <script
 src="https://code.jquery.com/jquery-3.6.3.js"
 integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
 crossorigin="anonymous">
-</script>
-<script>
-        $(document).ready(function () {
-            $('.selector_dropdown_button').click(function (event){
-                $(this).toggleClass('active').next().fadeToggle(200);
-                // $('.student').toggleClass('active');
-                // $('.parent').toggleClass('active');
-                // let bottomStudent = 0;
-                // let bottomParent = 0;
-                // setInterval(function () {
-                //     if (bottomStudent === 100) {
-                //         clearInterval();
-                //     } else {
-                //         $('.student').bottom(bottomStudent + '%');
-                //         $('.parent').bottom(bottomStudent+'%');
-                //         bottomStudent+=1;
-                //         bottomParent+=1;
-                //     }
-                // }, 0.1);
-            })
-            $('.parent').click(function (event){
-                $('.selector_dropdown_button').text('Родитель').toggleClass('active').next().fadeToggle(200);
-            })
-            $('.student').click(function (event){
-                $('.selector_dropdown_button').text('Ученик').toggleClass('active').next().fadeToggle(200);
-            })
-            $(document).click(function (event) {
-                if(!$(event.target).is('.selector_dropdown_button')) {
-                    $('.selector_dropdown_button').removeClass('active').next().fadeOut(200);
-                }
-            })
-                // $(document).click(function (event){
-                //     $('.selector_dropdown_button').removeClass('active').next().removeClass('active')
-                //     $('.student').removeClass('active');
-                //     $('.parent').removeClass('active');
-                //
-                // })
-        })
 </script>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
@@ -437,7 +258,6 @@ crossorigin="anonymous">
 
 
     const regexpName = /^[a-zA-Zа-яА-Я]+$/;
-    const regexpEmail = /[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]/;
     const regexpPhoneNumber = /\+79[0-9]{9}/;
 
 
@@ -445,7 +265,6 @@ crossorigin="anonymous">
         let last_name = document.getElementById("last_name").value;
         let first_name = document.getElementById("first_name").value;
         let second_name = document.getElementById("second_name").value;
-        let email = document.getElementById("email").value;
         let phone = document.getElementById("phone").value;
         function set_error(error){
             document.getElementById("error").innerText = error;
@@ -461,14 +280,6 @@ crossorigin="anonymous">
         // }
         // if(second_name.length === 0){
         //     set_error("Введите ваше отчество.");
-        //     return;
-        // }
-        // if(email.length === 0){
-        //     set_error("Введите ваш номер телефона.");
-        //     return;
-        // }
-        // if(!regexpEmail.test(email)){
-        //     set_error("Неверно введена почта");
         //     return;
         // }
         // if(phone.length === 0){
@@ -496,9 +307,7 @@ crossorigin="anonymous">
             last_name:last_name,
             first_name:first_name,
             second_name:second_name,
-            email:email,
             phone:phone,
-            user_type:document.getElementById('selector_dropdown_button').innerText
         }
         var element = document.getElementById('plka');
         var wdth = 20;

@@ -14,10 +14,16 @@ def subjects_kb():
     return markup.as_markup(resize_keyboard=True)
 
 def teachers_by_subject_kb(subject_name):
-    teachers = teacher_controller.get_short_teachers_names_by_subject(subject_name)
+    teachers = teacher_controller.get_short_teachers_names_by_subject(subject_name)[0]
     markup = ReplyKeyboardBuilder()
     for teacher in teachers:
         markup.button(text=teacher)
     markup.button(text="Отмена")
     markup.adjust(3)
+    return markup.as_markup(resize_keyboard=True)
+
+def set_group_set_date_kb():
+    markup = ReplyKeyboardBuilder()
+    markup.button(text="Отмена")
+    markup.adjust(1)
     return markup.as_markup(resize_keyboard=True)

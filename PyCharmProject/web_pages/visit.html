@@ -258,12 +258,15 @@
             }
         }
     </style>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script
             src="https://code.jquery.com/jquery-3.6.3.js"
             integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
             crossorigin="anonymous">
     </script>
     <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand()
         $(document).init(function () {
                 $(".left_pict_wrapper").on("mouseover", function () {
                     $(this).parent().outerHeight('30%');
