@@ -1,0 +1,345 @@
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Title</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap'); /*Обнуление*/
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        *, *:before, *:after {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        :focus, :active {
+            outline: none;
+        }
+
+        a:focus, a:active {
+            outline: none;
+        }
+
+        nav, footer, header, aside {
+            display: block;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            font-size: 100%;
+            line-height: 1;
+            font-size: 14px;
+            -ms-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        input, button, textarea {
+            font-family: inherit;
+        }
+
+        input::-ms-clear {
+            display: none;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        button::-moz-focus-inner {
+            padding: 0;
+            border: 0;
+        }
+
+        a, a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-size: inherit;
+            font-weight: 400;
+        }
+
+        /*--------------------*/
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+        body {
+            font-family: 'Comfortaa';
+            font-weight: 200;
+            height: 95%;
+            max-width: 1200px;
+
+            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color);
+        }
+
+        header {
+            margin-top: 3%;
+            font-size: 26px;
+            text-align: center;
+        }
+
+        .name {
+        }
+
+        .palka {
+            content: "";
+            width: 20%;
+            margin-left: 40%;
+            margin-top: 2%;
+            height: 3px;
+            background-color: var(--tg-theme-text-color);
+            display: block;
+            transition: width, margin-top 1s ease;
+        }
+
+        .main {
+
+            margin-top: 5%;
+            text-align: center;
+
+            block-size: auto;
+        }
+
+        .main . form {
+            width: 100%;
+            height: 100%;
+        }
+
+        input {
+            padding-left: 15px;
+            margin-top: 6%;
+            border-radius: 6px;
+            width: 90%;
+            height: 7%;
+            border: 3px solid rgba(49, 49, 49, 0.47);
+            transition: all 800ms ease;
+        }
+
+        input:hover {
+            color: #b9b9b9;
+            background: var(--tg-theme-bg-color);
+            transition: all 800ms ease;
+        }
+
+        input:focus {
+
+            box-shadow: 0 0 25px #CF821E; /*#c8c6c7*/
+            border-color: #CF821E;
+            outline: none;
+            transition: all 800ms ease;
+        }
+
+        input::-webkit-input-placeholder {
+            opacity: 1;
+            transition: opacity 800ms ease;
+        }
+
+        input::-moz-placeholder {
+            opacity: 1;
+            transition: opacity 800ms ease;
+        }
+
+        input:-moz-placeholder {
+            opacity: 1;
+            transition: opacity 800ms ease;
+        }
+
+        input:-ms-input-placeholder {
+            opacity: 1;
+            transition: opacity 800ms ease;
+        }
+
+        input:focus::-webkit-input-placeholder {
+            opacity: 0;
+            transition: opacity 800ms ease;
+        }
+
+        input:focus::-moz-placeholder {
+            opacity: 0;
+            transition: opacity 800ms ease;
+        }
+
+        input:focus:-moz-placeholder {
+            opacity: 0;
+            transition: opacity 800ms ease;
+        }
+
+        input:focus:-ms-input-placeholder {
+            opacity: 0;
+            transition: opacity 800ms ease;
+        }
+
+        button[id="reg"] {
+            margin-top: 20%;
+            text-align: center;
+            width: 50%;
+            height: 7%;
+            border-radius: 8px;
+            color: #939393;
+            background: #313131;
+            transition: all 800ms ease;
+        }
+
+        button[id="reg"]:hover {
+            color: black;
+            background: #a7a6a6;
+            transition: all 800ms ease;
+            box-shadow: 0 0 25px rgba(207, 130, 30, 0.77);
+        }
+
+        div[id = "error"]{
+            color: rgba(255, 104, 104, 0.62);
+        }
+
+        @media (min-width: 520px) and (max-width: 1024px) {
+            header {
+                font-size: 40px;
+            }
+
+            input {
+                font-size: 20px;
+            }
+
+            button {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="head">
+        <h1 class="name">TechnoSchool</h1>
+        <p class="palka" id="plka"></p>
+    </div>
+</header>
+<div class="main">
+    <div id = "error"></div>
+    <form class="reg_form">
+        <input id="last_name" type="text" placeholder="Фамилия">
+        <input id="first_name" type="text" placeholder="Имя">
+        <input id="second_name" type="text" placeholder="Отчество">
+        <input id="phone" type="text" placeholder="Номер телефона (+79000000000)">
+    </form>
+
+    <button id="reg">Отправить</button>
+</div>
+<script
+src="https://code.jquery.com/jquery-3.6.3.js"
+integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+crossorigin="anonymous">
+</script>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+    let tg = window.Telegram.WebApp;
+    let reg = document.getElementById("reg");
+    tg.expand();
+
+
+
+    const regexpName = /^[a-zA-Zа-яА-Я]+$/;
+    const regexpPhoneNumber = /\+79[0-9]{9}/;
+
+
+    reg.addEventListener("click", () => {
+        let last_name = document.getElementById("last_name").value;
+        let first_name = document.getElementById("first_name").value;
+        let second_name = document.getElementById("second_name").value;
+        let phone = document.getElementById("phone").value;
+        function set_error(error){
+            document.getElementById("error").innerText = error;
+        }
+        set_error('');
+        // if(last_name.length === 0){
+        //     set_error("Введите вашу фамилию.");
+        //     return;
+        // }
+        // if(first_name.length === 0){
+        //     set_error("Введите ваше имя.");
+        //     return;
+        // }
+        // if(second_name.length === 0){
+        //     set_error("Введите ваше отчество.");
+        //     return;
+        // }
+        // if(phone.length === 0){
+        //     set_error("Введите ваш номер телефона.");
+        //     return;
+        // }
+        // if(!regexpName.test(last_name)){
+        //     set_error("Неверно введена фамилия");
+        //     return;
+        // }
+        // if(!regexpName.test(first_name)){
+        //     set_error("Неверно введено имя");
+        //     return;
+        // }
+        // if(!regexpName.test(second_name)){
+        //     set_error("Неверно введено отчество");
+        //     return;
+        // }
+        // if(!regexpPhoneNumber.test(phone)){
+        //     set_error("Неверно введен номер телефона");
+        //     return;
+        // }
+
+        let callbackData={
+            last_name:last_name,
+            first_name:first_name,
+            second_name:second_name,
+            phone:phone,
+        }
+        var element = document.getElementById('plka');
+        var wdth = 20;
+        var mrgin = 40;
+        setInterval(function () {
+            if (wdth === 100) {
+                clearInterval();
+                setTimeout(function () {
+                    tg.sendData(JSON.stringify(callbackData));
+                    tg.close();
+                }, 10);
+            } else {
+                wdth++;
+                mrgin -= 0.5;
+                element.style.width = wdth + '%';
+                element.style.marginLeft = mrgin + '%';
+            }
+        }, 0.1);
+
+    })
+
+
+
+    var inputField = document.getElementById('last_name');
+
+    document.addEventListener('click', function (event) {
+        if (event.target !== inputField) {
+            inputField.blur();
+        }
+    })
+</script>
+</body>
+</html>
+
+

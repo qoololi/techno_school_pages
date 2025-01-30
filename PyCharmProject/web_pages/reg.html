@@ -1,0 +1,131 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+            height: 100%;
+            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color);
+        }
+
+        #main{
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        button{
+            border: 0;
+            border-radius: 8px;
+            margin-top: 15%;
+            height: 6%;
+            width: 60%;
+            font-size: 20px;
+            text-align: center;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 500ms ease;
+            color: #939393;
+            background: #313131;
+        }
+        button:hover{
+            color: black;
+            background: #a7a6a6;
+            box-shadow: 0 0 25px rgba(207,130,30,0.77);
+        }
+
+        form{
+            height: 70%;
+            padding-top: 20%    ;
+            block-size: auto;
+
+        }
+
+        input{
+            width: 90%;
+            height: 5%;
+            outline: none;
+            margin: 10px 5%;
+            padding: 15px 10px;
+            font-size: 14px;
+            border: 2px solid silver;
+            border-radius: 5px;
+        }
+        input:hover{
+            transition: all 1000ms ease;
+            background: #b9b9b9;
+        }
+        input:focus {
+            transition: all 1000ms ease;
+            box-shadow: 0 0 25px #CF821E;/*#c8c6c7*/
+            border-color: #CF821E;
+            outline: none;
+        }
+        header{
+            height: 10%;
+            display: flex;
+            width: 100%;
+            position: fixed;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+        }
+        div[id = "head_text"]:after{
+            content: "";
+            margin-top: 5%;
+            background-color: var(--tg-theme-text-color);
+            height: 3px;
+            width: 30%;
+            display: inline-block;
+        }
+        footer{
+            height: 10%;
+            color: #c8c6c7;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(119,117,120,0.45);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id = "head_text">
+            <h1 class="header_text">TechnoSchool</h1>
+        </div>
+    </header>
+    <div id = "main">
+        <form id = "form">
+            <input type = "text" placeholder="Фамилия" id="last_name">
+            <input type = "text" placeholder="Имя" id="first_name">
+            <input type = "text" placeholder="Отчество" id="second_name">
+            <input type = "text" placeholder="Почта" id="email">
+            <input type = "text" placeholder="Номер телефона" id="telephone">
+            <button id = "reg">Зарегистрироваться</button>
+        </form>
+    </div>
+    <footer>
+        <div id = "footer">Связь с техподдержкой - <a href="https://t.me/TechnoSchoolSupport">Телеграмм</a></div>
+    </footer>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>
