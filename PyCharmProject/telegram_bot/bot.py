@@ -22,7 +22,7 @@ from aiogram.fsm.state import StatesGroup, State
 
 logging.basicConfig(level=logging.INFO)
 
-bot = Bot(token='6618395365:AAGkHB6Ggg0KeIbXhD4SwG18MY4Jq-47dgs')
+bot = Bot(token='')
 user_router = Router()
 
 class ChooseUi(StatesGroup):
